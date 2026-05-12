@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+      - ./sources:/app/sources
+      - ./client_secrets.json:/app/client_secrets.json
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
