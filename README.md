@@ -4,6 +4,8 @@
 
 ## Оглавление
 
+- [Установка Docker](#установка-docker)
+- [Быстрый старт](#быстрый-старт)
 - [Функционал бота](#функционал-бота)
 - [Технологии](#технологии)
 - [Запуск с помощью Docker](#запуск-с-помощью-docker)
@@ -17,6 +19,68 @@
 - [Переменные окружения](#переменные-окружения)
 - [Volumes](#volumes)
 - [Разработка](#разработка)
+
+## Установка Docker
+
+<details>
+<summary>Установка Docker на Ubuntu/Debian</summary>
+
+### Ubuntu/Debian
+
+1. **Обновите пакеты:**
+   ```bash
+   sudo apt update
+   ```
+
+2. **Установите необходимые пакеты:**
+   ```bash
+   sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release
+   ```
+
+3. **Добавьте GPG ключ Docker:**
+   ```bash
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   ```
+
+4. **Добавьте репозиторий Docker:**
+   ```bash
+   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+
+5. **Установите Docker Engine:**
+   ```bash
+   sudo apt update
+   sudo apt install docker-ce docker-ce-cli containerd.io
+   ```
+
+6. **Установите Docker Compose:**
+   ```bash
+   sudo apt install docker-compose-plugin
+   ```
+
+7. **Добавьте пользователя в группу docker (опционально):**
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
+   После этого перезайдите в систему.
+
+8. **Проверьте установку:**
+   ```bash
+   docker --version
+   docker compose version
+   ```
+
+</details>
+
+## Быстрый старт
+
+Если у вас уже установлен Docker и Docker Compose, выполните одну команду:
+
+```bash
+git clone https://github.com/dasha0ii/yt-zavod.git && cd yt-zavod && cp .env.example .env && docker compose up --build
+```
+
+Затем настройте `.env` файл с вашими токенами и добавьте `client_secrets.json`.
 
 ## Функционал бота
 
