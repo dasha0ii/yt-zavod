@@ -35,7 +35,7 @@ TELEGRAM_BOT_TOKEN=ваш_токен
 2. Включить **YouTube Data API v3**
 3. Создать OAuth 2.0 клиент (тип: веб-приложение)
 4. URI перенаправления: `http://localhost:8080/`
-5. Скачать JSON → переименовать в `client_secrets.json` → положить в корень проекта
+5. Скачать JSON → переименовать в `client_secrets.json` → отправить содержимое в бота
 
 ## Структура
 
@@ -45,9 +45,8 @@ TELEGRAM_BOT_TOKEN=ваш_токен
 ├── Dockerfile
 ├── docker-compose.yml
 ├── .env                 # создать из .env.example
-├── client_secrets.json  # добавить вручную
 ├── output/              # обработанные видео
-└── sources/             # исходники
+└── sources/             # исходники (фоны для видео)
 ```
 
 ## Остановка
